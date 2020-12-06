@@ -6,8 +6,8 @@ def call (docker_user)
     sh '''
     pwd
     ls
-    chmod +x dockerBuild.sh
+    chmod +x $WORKSPACE/dockerBuild.sh
     ls -al
-    bash ./dockerBuild.sh "$docker_user"
+    bash $WORKSPACE/dockerBuild.sh "$docker_user"
     '''
 }
