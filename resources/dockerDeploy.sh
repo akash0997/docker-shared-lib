@@ -1,5 +1,6 @@
 #!/bin/bash
 docker_user=$1
+echo $docker_user
 external_port=$2
 internal_port=$3
 container_id=$(docker ps -qf "name=${JOB_NAME}") && [ -z $container_id ] && echo "Container not running" || (docker stop $container_id && docker rm $container_id)
