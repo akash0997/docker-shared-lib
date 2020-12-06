@@ -8,7 +8,7 @@ docker run -p $external_port:$internal_port --name ${JOB_NAME} -d $docker_user/$
 docker ps | grep ${JOB_NAME}
 docker logs ${JOB_NAME}
 test=$(curl localhost:$external_port)
-if [ $test = "Hello World, testing Docker container" ]; then
+if [[ $test == "Hello World, testing Docker container" ]]; then
    echo "Test successful"
 else
   echo "Test failed"
