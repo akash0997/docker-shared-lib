@@ -5,6 +5,6 @@ def call (docker_user)
     writeFile file: './dockerBuild.sh', text: script_content
     sh '''
     chmod +x dockerBuild.sh
-    ./dockerBuild.sh $docker_user
+    bash -c ". dockerBuild.sh $docker_user
     '''
 }
